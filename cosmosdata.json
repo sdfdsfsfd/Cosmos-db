@@ -1,7 +1,7 @@
 {
-    "id": "3",
-    "category": "midit",
-    "name": "yeah",
-    "description": "wallah.",
-    "isComplete": false
+    "id": "1",
+    "category": "personal",
+    "name": "groceries1234",
+    "description": "Pick up apples and strawberries.",
+    "isComplete": false,
 }
