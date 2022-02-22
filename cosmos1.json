@@ -1,23 +1,6 @@
-[
-  {
-    
+{
+    "id": "1",
+    "_rid": "W-1AAJ4KS8EEAAAAAAAAAA==",
     "category": "personal",
-    "name": "groceries1234",
-    "description": "Dont Pick up apples and strawberries.",
-    "isComplete": false
-},
-   {
     
-    "category": "hiwari",
-    "name": "hekjjkdsfj",
-    "description": "threee.",
-    "isComplete": false
-},
- {
-    
-    "category": "meeting",
-    "name": "hello4",
-    "description": "twoo.",
-    "isComplete": false
 }
-]
