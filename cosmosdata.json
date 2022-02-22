@@ -1,7 +1,7 @@
 {
-    "id": "1",
-    "category": "personal",
-    "name": "groceries",
-    "description": "Pick up apples and strawberries.",
+    "id": "2",
+    "category": "business",
+    "name": "meetings",
+    "description": "Meet with Britta.",
     "isComplete": false
 }
