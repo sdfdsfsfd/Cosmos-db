@@ -1,3 +1,4 @@
+[
 {
 	"employeeId": 101,
 	"firstName": "Brian",
@@ -24,7 +25,8 @@
 		"state": "New Jersey",
 		"postalCode": "07028"
 	}
-}
+	},
+	
 {	"employeeId": 102,
 	"firstName": "Maria",
 	"lastName": "Torres",
@@ -43,7 +45,7 @@
 		"city": "California",
 		"state": "San Francisco"
 	}
-}
+},
 {
     "employeeId": 103,
     "firstName": "Robin",
@@ -64,3 +66,5 @@
         "state": "New Jersey",
         "postalCode": "07028"
     }}
+	]
+ 
