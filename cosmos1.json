@@ -4,13 +4,13 @@
     "category": "personal",
     "name": "groceries1234",
     "description": "Pick up apples and strawberries.",
-    "isComplete": false,
+    "isComplete": false
 },
  {
     
     "category": "meeting",
     "name": "hello4",
     "description": "twoo.",
-    "isComplete": false,
+    "isComplete": false
 }
 ]
