@@ -21,6 +21,12 @@ jobs:
      timeoutInMinutes: 1440 # task times out in 1 day
      inputs:
          notifyUsers: |
-            someone@example.com
+            mohasinpathan005@gmail.com
          instructions: 'Please validate the build configuration and resume'
          onTimeout: 'resume'
+   - task: CmdLine@2
+     inputs:
+       script: |
+         echo Write your commands here
+         
+         echo Hello world
