@@ -24,9 +24,14 @@ jobs:
             mohasinpathan005@gmail.com
          instructions: 'Please validate the build configuration and resume'
          onTimeout: 'resume'
+- job: Runcommandline
+  displayName: runcommandline  
+      
+  
+  steps:   
    - task: CmdLine@2
      inputs:
-       script: |
+      script: |
          echo Write your commands here
          
          echo Hello world
