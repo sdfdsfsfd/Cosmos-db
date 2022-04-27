@@ -24,8 +24,9 @@ jobs:
             mohasinpathan005@gmail.com
          instructions: 'Please validate the build configuration and resume'
          onTimeout: 'reject'
-- job: Runcommandline
-  displayName: runcommandline
+   - script: echo Hello world
+#- job: Runcommandline
+#  displayName: runcommandline
 
 #- deployment: DeployWeb
 #  displayName: deploy Web App
