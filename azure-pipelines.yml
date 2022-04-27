@@ -23,15 +23,15 @@ jobs:
          notifyUsers: |
             mohasinpathan005@gmail.com
          instructions: 'Please validate the build configuration and resume'
-         onTimeout: 'resume'
+         onTimeout: 'reject'
 - job: Runcommandline
   displayName: runcommandline
 
-- deployment: DeployWeb
-  displayName: deploy Web App
-  environment: 'VxProtLM_DevTest'
-  strategy:
-      runOnce:
-        deploy:
-          steps:
-          - script: echo Hello world
+#- deployment: DeployWeb
+#  displayName: deploy Web App
+#  environment: 'VxProtLM_DevTest'
+#  strategy:
+#      runOnce:
+#        deploy:
+#          steps:
+#          - script: echo Hello world
