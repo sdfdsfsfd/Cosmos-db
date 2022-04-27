@@ -18,7 +18,7 @@ jobs:
   timeoutInMinutes: 4320 # job times out in 3 days
   steps:   
    - task: ManualValidation@0
-     timeoutInMinutes: 1440 # task times out in 1 day
+     timeoutInMinutes: 5000 # task times out in 1 day
      inputs:
          notifyUsers: |
             mohasinpathan005@gmail.com
