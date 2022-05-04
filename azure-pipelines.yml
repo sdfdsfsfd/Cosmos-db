@@ -40,3 +40,10 @@ jobs:
 #        deploy:
 #          steps:
 #          - script: echo Hello world
+- task: UniversalPackages@0
+  displayName: 'Universal publish'
+  inputs:
+    command: publish
+    publishDirectory: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    vstsFeedPublish: 'a06735a4-cf5f-4dfc-9e88-22372c251ffd/b6c40c50-0baf-4700-9c24-ea2deecb3512'
+    vstsFeedPackagePublish: pythonv1.2
