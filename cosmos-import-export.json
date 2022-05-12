@@ -1,0 +1,73 @@
+[
+{
+	"employeeId": 101,
+  "id": 101,
+	"firstName": "Brian",
+	"lastName": "Woods",
+	"Age": 33,
+	"Gender": "Male",
+	"Pets": [
+		"Fish",
+		"Dog",
+		"Cat"
+	],
+	"phoneNumbers": [		
+{			"type": "work",
+			"number": "5563459874"
+		},
+		{
+			"type": "home",
+			"number": "1453459874"
+		}
+	],
+	"Address": {
+		"streetAddress": "300",
+		"city": "Jersey City",
+		"state": "New Jersey",
+		"postalCode": "07028"
+	}
+	},
+	
+{	"employeeId": 102,
+  "id": 102,
+	"firstName": "Maria",
+	"lastName": "Torres",
+	"Age": 37,
+	"Gender": "Female",
+	"Pets": [
+		"Dog",
+		"Cat"
+	],
+	"phoneNumbers": [{
+		"type": "work",
+		"number": "8954598740"
+	}],
+	"Address": {
+	"streetAddress": "568",
+		"city": "California",
+		"state": "San Francisco"
+	}
+},
+{
+    "employeeId": 103,
+    "id": 103,
+    "firstName": "Robin",
+    "lastName": "Watson",
+    "Age": 31,
+    "Gender": "Male",
+    "Pets": [
+        "Hamster",
+        "Cat"
+    ],
+    "phoneNumbers": [
+        {
+            "type": "Travel",
+            "number": "7856945987"
+        }
+    ],
+    "Address": {
+        "state": "New Jersey",
+        "postalCode": "07028"
+    }}
+	
+    ]
