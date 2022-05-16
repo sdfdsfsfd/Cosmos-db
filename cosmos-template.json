@@ -49,7 +49,7 @@
 	},
 	        "partitionKeyPath": {
                         "type": "string",
-                        "defaultValue": "/partitionKey",
+                        "defaultValue": "partitionKey",
                         "metadata": {
                                 "description": "The partition key for the container"
                 }
