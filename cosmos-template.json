@@ -48,7 +48,7 @@
         }
     },
         "partitionKey": {
-            "type": "string",
+            
             
             "metadata": {
                 "description": "The PartitionKey for the container"
