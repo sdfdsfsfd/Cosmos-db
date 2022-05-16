@@ -47,7 +47,14 @@
             "minValue": 400
         }
     },
-        
+        "partKey": {
+            "type": "string",
+            
+            "metadata": {
+                "description": "The PartitionKey for the container"
+            }
+        }
+    },
     "resources": [
         {
             "type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases",
@@ -68,7 +75,7 @@
                     "id": "[parameters('containerName')]",
                     "partitionKey": {
                         "paths": [
-                            "/employeeId"
+                            "[parameters('partKey')]"
                         ],
                         "kind": "Hash"
                     },
