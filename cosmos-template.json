@@ -48,7 +48,7 @@
         }
     },
         "paths": {
-            
+            "type": "object",
             
             "metadata": {
                 "description": "The PartitionKey for the container"
