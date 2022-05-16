@@ -32,14 +32,14 @@
 		},
 		"containerName": {
 			"type": "string",
-
+                        "defaultValue": "devcontainer",
 			"metadata": {
 				"description": "The name for the container"
 			}
 		},
 		"throughput": {
 			"type": "int",
-
+                        "defaultValue": 400,
 			"metadata": {
 				"description": "The throughput for the container"
 			},
@@ -47,14 +47,13 @@
 			"minValue": 400
 		}
 	},
-	        "paths": {
-		        "type": "string",
-
-		        "metadata": {
-			    "description": "The PartitionKey for the container"
-		}
-
-	},
+	        "partitionKeyPath": {
+                        "type": "string",
+                        "defaultValue": "/partitionKey",
+                        "metadata": {
+                                "description": "The partition key for the container"
+                }
+    },
 	"resources": [{
 			"type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases",
 			"apiVersion": "2021-10-15",
@@ -74,7 +73,7 @@
 					"id": "[parameters('containerName')]",
 					"partitionKey": {
 						"paths": [
-							"[parameters('paths')]"
+							"[parameters('partitionKeyPath')]"
 						],
 						"kind": "Hash"
 					},
