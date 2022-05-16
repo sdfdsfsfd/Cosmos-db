@@ -20,5 +20,5 @@ steps:
     location: 'West US'
     templateLocation: 'Linked artifact'
     csmFile: '$(System.DefaultWorkingDirectory)\cosmos-template.json'
-    overrideParameters: '-accountName "$(var_account_name)" -databaseName "$(var_databasename)" -containerName "$(var_containername)" -throughput "$(var_throughput)" -paths "$(var_partitionkey)"'
+    overrideParameters: '-accountName "$(var_account_name)" -databaseName "$(var_databasename)" -containerName "$(var_containername)" -throughput "$(var_throughput)" -partitionKeyPath "$(var_partitionkey)"'
     deploymentMode: 'Incremental'
