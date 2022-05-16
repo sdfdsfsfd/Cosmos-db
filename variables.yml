@@ -2,5 +2,5 @@ variables:
   var_account_name: devtesdb
   var_databasename: myDatabase1
   var_containername: myContainer1
-  var_throughput: 500
+  var_throughput: 600
   var_partitionkey: '/employeeId'
