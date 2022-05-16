@@ -32,96 +32,96 @@
 		},
 		"containerName": {
 			"type": "string",
-                        "defaultValue": "devcontainer",
+			"defaultValue": "devcontainer",
 			"metadata": {
 				"description": "The name for the container"
 			}
 		},
 		"throughput": {
 			"type": "int",
-                        "defaultValue": 400,
+			"defaultValue": 400,
 			"metadata": {
 				"description": "The throughput for the container"
-			},
-			"maxValue": 1000000,
-			"minValue": 400
-		
-	},
-	        "partitionKeyPath": {
-                        "type": "string",
-                        "defaultValue": "/partitionKey",
-                        "metadata": {
-                                "description": "The partition key for the container"
-                }
-    },
-	"resources": [{
-			"type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases",
-			"apiVersion": "2021-10-15",
-			"name": "[format('{0}/{1}', toLower(parameters('accountName')), parameters('databaseName'))]",
-			"properties": {
-				"resource": {
-					"id": "[parameters('databaseName')]"
-				}
+			}
+
+
+		},
+		"partitionKeyPath": {
+			"type": "string",
+			"defaultValue": "/partitionKey",
+			"metadata": {
+				"description": "The partition key for the container"
 			}
 		},
-		{
-			"type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers",
-			"apiVersion": "2021-04-15",
-			"name": "[format('{0}/{1}', format('{0}/{1}', toLower(parameters('accountName')), parameters('databaseName')), parameters('containerName'))]",
-			"properties": {
-				"resource": {
-					"id": "[parameters('containerName')]",
-					"partitionKey": {
-						"paths": [
-							"[parameters('partitionKeyPath')]"
-						],
-						"kind": "Hash"
-					},
-					"indexingPolicy": {
-						"indexingMode": "consistent",
-						"includedPaths": [{
-							"path": "/*"
-						}],
-						"excludedPaths": [{
-							"path": "/myPathToNotIndex/*"
-						}],
-						"compositeIndexes": [
-							[{
-									"path": "/name",
-									"order": "ascending"
-								},
-								{
-									"path": "/age",
-									"order": "descending"
-								}
-							]
-						],
-						"spatialIndexes": [{
-							"path": "/location/*",
-							"types": [
-								"Point",
-								"Polygon",
-								"MultiPolygon",
-								"LineString"
-							]
-						}]
-					},
-					"defaultTtl": 86400,
-					"uniqueKeyPolicy": {
-						"uniqueKeys": [{
-							"paths": [
-								"/phoneNumber"
-							]
-						}]
+		"resources": [{
+				"type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases",
+				"apiVersion": "2021-10-15",
+				"name": "[format('{0}/{1}', toLower(parameters('accountName')), parameters('databaseName'))]",
+				"properties": {
+					"resource": {
+						"id": "[parameters('databaseName')]"
 					}
-				},
-				"options": {
-					"throughput": "[parameters('throughput')]"
 				}
 			},
-			"dependsOn": [
-				"[resourceId('Microsoft.DocumentDB/databaseAccounts/sqlDatabases', parameters('accountName'), parameters('databaseName'))]"
-			]
-		}
-	]
+			{
+				"type": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers",
+				"apiVersion": "2021-04-15",
+				"name": "[format('{0}/{1}', format('{0}/{1}', toLower(parameters('accountName')), parameters('databaseName')), parameters('containerName'))]",
+				"properties": {
+					"resource": {
+						"id": "[parameters('containerName')]",
+						"partitionKey": {
+							"paths": [
+								"[parameters('partitionKeyPath')]"
+							],
+							"kind": "Hash"
+						},
+						"indexingPolicy": {
+							"indexingMode": "consistent",
+							"includedPaths": [{
+								"path": "/*"
+							}],
+							"excludedPaths": [{
+								"path": "/myPathToNotIndex/*"
+							}],
+							"compositeIndexes": [
+								[{
+										"path": "/name",
+										"order": "ascending"
+									},
+									{
+										"path": "/age",
+										"order": "descending"
+									}
+								]
+							],
+							"spatialIndexes": [{
+								"path": "/location/*",
+								"types": [
+									"Point",
+									"Polygon",
+									"MultiPolygon",
+									"LineString"
+								]
+							}]
+						},
+						"defaultTtl": 86400,
+						"uniqueKeyPolicy": {
+							"uniqueKeys": [{
+								"paths": [
+									"/phoneNumber"
+								]
+							}]
+						}
+					},
+					"options": {
+						"throughput": "[parameters('throughput')]"
+					}
+				},
+				"dependsOn": [
+					"[resourceId('Microsoft.DocumentDB/databaseAccounts/sqlDatabases', parameters('accountName'), parameters('databaseName'))]"
+				]
+			}
+		]
+	}
 }
