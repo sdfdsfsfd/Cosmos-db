@@ -25,21 +25,21 @@
         },
         "databaseName": {
             "type": "string",
-            "defaultValue": "myDatabase",
+            
             "metadata": {
                 "description": "The name for the database"
             }
         },
         "containerName": {
             "type": "string",
-            "defaultValue": "myContainer",
+            
             "metadata": {
                 "description": "The name for the container"
             }
         },
         "throughput": {
             "type": "int",
-            "defaultValue": 400,
+            
             "metadata": {
                 "description": "The throughput for the container"
             },
