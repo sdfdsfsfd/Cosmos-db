@@ -37,7 +37,7 @@
                 "description": "The name for the container"
             }
         },
-        "throughput": {
+        "throughPut": {
             "type": "int",
             
             "metadata": {
@@ -47,7 +47,7 @@
             "minValue": 400
         }
     },
-        "partKey": {
+        "partitionKey": {
             "type": "string",
             
             "metadata": {
@@ -75,7 +75,7 @@
                     "id": "[parameters('containerName')]",
                     "partitionKey": {
                         "paths": [
-                            "[parameters('partKey')]"
+                            "[parameters('partitionKey')]"
                         ],
                         "kind": "Hash"
                     },
