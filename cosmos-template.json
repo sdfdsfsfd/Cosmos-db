@@ -47,10 +47,10 @@
 			"minValue": 400
 		}
 	},
-	   "paths": {
-		    "type": "object",
+	        "paths": {
+		        "type": "string",
 
-		    "metadata": {
+		        "metadata": {
 			    "description": "The PartitionKey for the container"
 		}
 
