@@ -47,7 +47,7 @@
             "minValue": 400
         }
     },
-        "partitionKey": {
+        "partitionkey": {
             "type": "string",
             
             "metadata": {
@@ -76,7 +76,7 @@
                     "id": "[parameters('containerName')]",
                     "partitionKey": {
                         "paths": [
-                            "[parameters('partitionKey')]"
+                            "[parameters('partitionkey')]"
                         ],
                         "kind": "Hash"
                     },
