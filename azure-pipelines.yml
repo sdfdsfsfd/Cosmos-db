@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: windows-latest
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Pay-As-You-Go (40783f5c-2558-41a9-a5af-97b47669376e)'
+    subscriptionId: '40783f5c-2558-41a9-a5af-97b47669376e'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'rgg'
+    location: 'West US'
+    templateLocation: 'Linked artifact'
+    csmFile: '$(System.DefaultWorkingDirectory)\cosmos-template.json'
+    overrideParameters: '-accountName "$(var_account_name)" -databaseName "$(var_databasename)" -containerName "$(var_containername) -throughput "$(var_throughput) -partitionKey "$(var_partitionkey)'
+    deploymentMode: 'Incremental'
