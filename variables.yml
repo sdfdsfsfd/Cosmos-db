@@ -3,4 +3,4 @@ variables:
   var_databasename: mydatabase
   var_containername: mycontainer
   var_throughput: 450
-  var_partitionkey: /employeId
+  #var_partitionkey: /employeId
