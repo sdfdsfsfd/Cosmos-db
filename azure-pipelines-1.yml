@@ -36,28 +36,6 @@ steps:
                                  {
                                      "path": "/myPathToNotIndex/*"
                                  }
-                             ],
-                             "compositeIndexes": [
-                                 [
-                                     {
-                                         "path": "/name",
-                                         "order": "ascending"
-                                     },
-                                     {
-                                         "path": "/age",
-                                         "order": "descending"
-                                     }
-                                 ]
-                             ],
-                             "spatialIndexes": [
-                                 {
-                                     "path": "/location/*",
-                                     "types": [
-                                         "Point",
-                                         "Polygon",
-                                         "MultiPolygon",
-                                         "LineString"
-                                     ]
-                                 }
                              ]
-                         },
+                             }
+                             
