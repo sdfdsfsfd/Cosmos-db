@@ -26,6 +26,28 @@ steps:
     #cosmosDBIndexingPolicyFile: '$(System.DefaultWorkingDirectory)/_sdfdsfsfd_Cosmos-db/cosmos-import-export.json'
     cosmosDBIndexingPolicy: |
      {
-                             "indexingMode": "consistent"
-                             
-                         }
+        "indexingMode": "consistent",
+        "automatic": true,
+        "includedPaths": [
+         {
+            "path": "/aanaa*",
+            "indexes": [
+                {
+                    "kind": "Range",
+                    "dataType": "Number",
+                    "precision": -1
+                },
+                {
+                    "kind": "Range",
+                    "dataType": "String",
+                    "precision": -1
+                }
+            ]
+        }
+    ],
+    "excludedPaths": [
+        {
+            "path": "/\"_etag\"/?"
+        }
+    ]
+}
