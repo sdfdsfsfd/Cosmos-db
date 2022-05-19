@@ -16,13 +16,13 @@ steps:
 - task: winvision-bv.winvisionbv-cosmosdb-tasks.CosmosDBCollectionManagement.CosmosDBCollectionManagement@1
   displayName: 'Cosmos DB Collection Management: Create collection'
   inputs:
-    actionType: Update  #Update or Delete
+    actionType: Update  #Create or Update or Delete
     cosmosDBConnectionstring: 'AccountEndpoint=https://devtes.documents.azure.com:443/;AccountKey=id1ajWZvKbfQswqRcvjmhCuFXD6a6xYFaqNZafOvoMq2sBDgzMIes8sLQW0VWqGBLqxfIkgrjOrpKW114qOeDA==;Database=devtesdb'
     cosmosDBCollection: 'container'
     cosmosDBCollectionThroughput: 500
     cosmosDBPartitionKey: /employeeId
-    cosmosDBTimeToLive: 1
-    #cosmosDBIndexingPolicyType: filePath
+    cosmosDBTimeToLive: 1 #null == Off, -1 == On (No default), any other Int value (except 0) == On
+    #cosmosDBIndexingPolicyType: filePath #inline
     #cosmosDBIndexingPolicyFile: '$(System.DefaultWorkingDirectory)/_sdfdsfsfd_Cosmos-db/cosmos-import-export.json'
     cosmosDBIndexingPolicy: |
      {
