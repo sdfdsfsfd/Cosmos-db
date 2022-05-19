@@ -1,0 +1,63 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- none
+
+pool:
+  vmImage: windows-2022
+
+variables:
+- template: Env-variables/env-dev.yml
+
+steps:
+- task: winvision-bv.winvisionbv-cosmosdb-tasks.CosmosDBCollectionManagement.CosmosDBCollectionManagement@1
+  displayName: 'Cosmos DB Collection Management: Create collection devcont1'
+  inputs:
+    actionType: Update 
+    cosmosDBConnectionstring: 'AccountEndpoint=https://devtesdb1.documents.azure.com:443/;AccountKey=fcLYnmzBgQBj2ZcKxIfYRFqx2nc4TF7zRMnTG8v3SUk8o0cdGr8I7gzx2vUaGjqXmEjDP5dGwApjLG6z9ZDukA==;Database=devdatabase'
+    cosmosDBCollection: devcont1
+    cosmosDBCollectionThroughput: 400
+    cosmosDBPartitionKey: /employeeId
+    cosmosDBTimeToLive: 1
+    cosmosDBIndexingPolicyType: filePath
+    cosmosDBIndexingPolicyFile: '$(System.DefaultWorkingDirectory)/_sdfdsfsfd_Cosmos-db/cosmos-import-export.json'
+    cosmosDBIndexingPolicy: |
+     {
+                             "indexingMode": "consistent",
+                             "includedPaths": [
+                                 {
+                                     "path": "/*"
+                                 }
+                             ],
+                             "excludedPaths": [
+                                 {
+                                     "path": "/myPathToNotIndex/*"
+                                 }
+                             ],
+                             "compositeIndexes": [
+                                 [
+                                     {
+                                         "path": "/name",
+                                         "order": "ascending"
+                                     },
+                                     {
+                                         "path": "/age",
+                                         "order": "descending"
+                                     }
+                                 ]
+                             ],
+                             "spatialIndexes": [
+                                 {
+                                     "path": "/location/*",
+                                     "types": [
+                                         "Point",
+                                         "Polygon",
+                                         "MultiPolygon",
+                                         "LineString"
+                                     ]
+                                 }
+                             ]
+                         },
