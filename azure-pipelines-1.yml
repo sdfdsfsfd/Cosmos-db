@@ -19,7 +19,7 @@ steps:
     actionType: Update
     cosmosDBConnectionstring: 'AccountEndpoint=https://devtes.documents.azure.com:443/;AccountKey=id1ajWZvKbfQswqRcvjmhCuFXD6a6xYFaqNZafOvoMq2sBDgzMIes8sLQW0VWqGBLqxfIkgrjOrpKW114qOeDA==;Database=devtesdb'
     cosmosDBCollection: 'container'
-    cosmosDBCollectionThroughput: 400
+    cosmosDBCollectionThroughput: 500
     cosmosDBPartitionKey: /employeeId
     cosmosDBTimeToLive: 1
     #cosmosDBIndexingPolicyType: filePath
