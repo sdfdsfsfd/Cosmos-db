@@ -16,7 +16,7 @@ steps:
 - task: winvision-bv.winvisionbv-cosmosdb-tasks.CosmosDBCollectionManagement.CosmosDBCollectionManagement@1
   displayName: 'Cosmos DB Collection Management: Create collection devcont1'
   inputs:
-    #actionType: Update
+    actionType: Update
     cosmosDBConnectionstring: 'AccountEndpoint=https://devtes.documents.azure.com:443/;AccountKey=id1ajWZvKbfQswqRcvjmhCuFXD6a6xYFaqNZafOvoMq2sBDgzMIes8sLQW0VWqGBLqxfIkgrjOrpKW114qOeDA==;Database=devtesdb'
     cosmosDBCollection: 'container'
     cosmosDBCollectionThroughput: 400
