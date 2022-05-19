@@ -9,8 +9,8 @@ trigger:
 pool:
   vmImage: windows-2022
 
-variables:
-- template: Env-variables/env-dev.yml
+#variables:
+#- template: Env-variables/env-dev.yml
 
 steps:
 - task: winvision-bv.winvisionbv-cosmosdb-tasks.CosmosDBCollectionManagement.CosmosDBCollectionManagement@1
