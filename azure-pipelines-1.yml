@@ -44,9 +44,9 @@ steps:
                 }
             ]
         }
-     ],
-    "excludedPaths": [
+      ],
+     "excludedPaths": [
         {
             "path": "/\"_etag\"/?"
         }
-    ] }
+       ] }
