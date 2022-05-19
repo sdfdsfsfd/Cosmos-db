@@ -26,6 +26,6 @@ steps:
     #cosmosDBIndexingPolicyFile: '$(System.DefaultWorkingDirectory)/_sdfdsfsfd_Cosmos-db/cosmos-import-export.json'
     cosmosDBIndexingPolicy: |
      {
-                             "indexingMode": "none"
+                             "indexingMode": "consistent"
                              
                          }
