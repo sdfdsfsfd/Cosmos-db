@@ -16,7 +16,7 @@ steps:
 - task: winvision-bv.winvisionbv-cosmosdb-tasks.CosmosDBCollectionManagement.CosmosDBCollectionManagement@1
   displayName: 'Cosmos DB Collection Management: Create collection devcont1'
   inputs:
-    actionType: Delete  #Update or Delete
+    #actionType: Delete  #Update or Delete
     cosmosDBConnectionstring: 'AccountEndpoint=https://devtes.documents.azure.com:443/;AccountKey=id1ajWZvKbfQswqRcvjmhCuFXD6a6xYFaqNZafOvoMq2sBDgzMIes8sLQW0VWqGBLqxfIkgrjOrpKW114qOeDA==;Database=devtesdb'
     cosmosDBCollection: 'container'
     cosmosDBCollectionThroughput: 500
@@ -26,26 +26,6 @@ steps:
     #cosmosDBIndexingPolicyFile: '$(System.DefaultWorkingDirectory)/_sdfdsfsfd_Cosmos-db/cosmos-import-export.json'
     cosmosDBIndexingPolicy: |
      {
-                             "indexingMode": "consistent",
-                             "includedPaths": [
-                                 {
-                                     "path": "/*"
-                                 }
-                             ],
-                             "excludedPaths": [
-                                 {
-                                     "path": "/myPathToNotIndex/*"
-                                 }
-                             ],
-                             "spatialIndexes": [
-                                 {
-                                     "path": "/location/*",
-                                     "types": [
-                                         "Point",
-                                         "Polygon",
-                                         "MultiPolygon",
-                                         "LineString"
-                                     ]
-                                 }
-                             ]
+                             "indexingMode": "none"
+                             
                          }
