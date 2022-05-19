@@ -16,14 +16,14 @@ steps:
 - task: winvision-bv.winvisionbv-cosmosdb-tasks.CosmosDBCollectionManagement.CosmosDBCollectionManagement@1
   displayName: 'Cosmos DB Collection Management: Create collection devcont1'
   inputs:
-    actionType: Update 
-    cosmosDBConnectionstring: 'AccountEndpoint=https://devtesdb1.documents.azure.com:443/;AccountKey=fcLYnmzBgQBj2ZcKxIfYRFqx2nc4TF7zRMnTG8v3SUk8o0cdGr8I7gzx2vUaGjqXmEjDP5dGwApjLG6z9ZDukA==;Database=devdatabase'
-    cosmosDBCollection: devcont1
+    #actionType: Update
+    cosmosDBConnectionstring: 'AccountEndpoint=https://devtes.documents.azure.com:443/;AccountKey=id1ajWZvKbfQswqRcvjmhCuFXD6a6xYFaqNZafOvoMq2sBDgzMIes8sLQW0VWqGBLqxfIkgrjOrpKW114qOeDA==;Database=devtesdb'
+    cosmosDBCollection: 'container'
     cosmosDBCollectionThroughput: 400
     cosmosDBPartitionKey: /employeeId
     cosmosDBTimeToLive: 1
-    cosmosDBIndexingPolicyType: filePath
-    cosmosDBIndexingPolicyFile: '$(System.DefaultWorkingDirectory)/_sdfdsfsfd_Cosmos-db/cosmos-import-export.json'
+    #cosmosDBIndexingPolicyType: filePath
+    #cosmosDBIndexingPolicyFile: '$(System.DefaultWorkingDirectory)/_sdfdsfsfd_Cosmos-db/cosmos-import-export.json'
     cosmosDBIndexingPolicy: |
      {
                              "indexingMode": "consistent",
