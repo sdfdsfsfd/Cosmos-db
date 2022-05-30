@@ -1,3 +1,7 @@
+export KUBE_ID=$(az aks show -g <resource group> -n <aks cluster name> --query identityProfile.kubeletidentity.objectId -o tsv)
+export ACR_ID=$(az acr show -g <resource group> -n <acr name> --query id -o tsv)
+az role assignment create --assignee $KUBE_ID --role "AcrPull" --scope $ACR_ID
+
 [
 {
 	"employeeId": 101,
